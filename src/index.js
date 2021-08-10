@@ -28,10 +28,8 @@ if (!saveTheme) {
 
 
     
-function onBodyTheme(evt) {
-    evt.target.classList.toggle('theme');
-
-    if (!checkbox.classList.contains('theme')) {
+function onBodyTheme() {
+    if (checkbox.checked !== true) {
         localStorage.setItem('theme', Theme.LIGHT);
         document.body.classList.add('light-theme');
         document.body.classList.remove('dark-theme');
@@ -48,6 +46,7 @@ if (saveTheme === Theme.LIGHT) {
 } else if (saveTheme === Theme.DARK) {
     document.body.classList.add('dark-theme');
     document.body.classList.remove('light-theme');
+    checkbox.checked = true;
 }
     
 
